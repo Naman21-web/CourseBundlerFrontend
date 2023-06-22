@@ -1,49 +1,44 @@
-import { createReducer } from '@reduxjs/toolkit';
+import { createReducer } from "@reduxjs/toolkit";
 
-export const courseReducer = createReducer(
-  { courses: [], lectures: [] },
-  {
-    allCoursesRequest: state => {
-      state.loading = true;
+export const courseReducer = createReducer({courses:[],lectures:[]},{
+    //initial state courses and lectures which is empty array
+    allCoursesRequest:(state) => {
+        state.loading = true;
     },
-    allCoursesSuccess: (state, action) => {
-      state.loading = false;
-      state.courses = action.payload;
+    allCoursesSuccess:(state,action) => {
+        state.loading = false;
+        state.courses = action.payload;
     },
-    allCoursesFail: (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
+    allCoursesFail:(state,action) => {
+        state.loading = false;
+        state.error = action.payload;
     },
-
-    getCourseRequest: state => {
-      state.loading = true;
+    getCourseRequest:(state) => {
+        state.loading = true;
     },
-    getCourseSuccess: (state, action) => {
-      state.loading = false;
-      state.lectures = action.payload;
+    getCourseSuccess:(state,action) => {
+        state.loading = false;
+        state.lectures = action.payload;
     },
-    getCourseFail: (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
+    getCourseFail:(state,action) => {
+        state.loading = false;
+        state.error = action.payload;
     },
-
-    addToPlaylistRequest: state => {
-      state.loading = true;
+    addToPlaylistRequest:(state) => {
+        state.loading = true;
     },
-    addToPlaylistSuccess: (state, action) => {
-      state.loading = false;
-      state.message = action.payload;
+    addToPlaylistSuccess:(state,action) => {
+        state.loading = false;
+        state.message = action.payload;
     },
-    addToPlaylistFail: (state, action) => {
-      state.loading = false;
-      state.error = action.payload;
+    addToPlaylistFail:(state,action) => {
+        state.loading = false;
+        state.error = action.payload;
     },
-
-    clearError: state => {
-      state.error = null;
+    clearError : (state) => {
+        state.error=null;
     },
-    clearMessage: state => {
-      state.message = null;
+    clearMessage : (state) => {
+        state.message=null;
     },
-  }
-);
+})

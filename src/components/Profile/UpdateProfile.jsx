@@ -5,12 +5,13 @@ import { useNavigate } from 'react-router-dom';
 import { updateProfile } from '../../redux/actions/profile';
 import { loadUser } from '../../redux/actions/user';
 
-const UpdateProfile = ({ user }) => {
+const UpdateProfile = ({user}) => {
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const submitHandler = async e => {
     e.preventDefault();
     await dispatch(updateProfile(name, email));

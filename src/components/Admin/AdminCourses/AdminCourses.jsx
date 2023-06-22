@@ -34,6 +34,20 @@ import {
 import toast from 'react-hot-toast';
 
 const AdminCourses = () => {
+
+  // const courses = [
+  //   {
+  //   _id : 'jghgcjcjgvghvg',
+  //     title:"react Course",
+  //     category:"Web Development",
+  //     poster:{
+  //       url:"active",
+  //     },
+  //     createdBy:"ProgrammersBuddy",
+  //     views:123,
+  //     numOfVideos:12,
+  //   }
+  // ]
   const { courses, lectures } = useSelector(state => state.course);
 
   const { loading, error, message } = useSelector(state => state.admin);
@@ -51,6 +65,7 @@ const AdminCourses = () => {
     setCourseId(courseId);
     setCourseTitle(title);
   };
+
   const deleteButtonHandler = courseId => {
     console.log(courseId);
     dispatch(deleteCourse(courseId));
@@ -151,7 +166,8 @@ const AdminCourses = () => {
   );
 };
 
-function Row({ item, coureDetailsHandler, deleteButtonHandler, loading }) {
+
+function Row({ item, coureDetailsHandler, deleteButtonHandler,loading}) {
   return (
     <Tr>
       <Td>#{item._id}</Td>
@@ -190,3 +206,5 @@ function Row({ item, coureDetailsHandler, deleteButtonHandler, loading }) {
   );
 }
 export default AdminCourses;
+
+

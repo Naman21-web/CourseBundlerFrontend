@@ -25,9 +25,6 @@ const Footer = () => {
           color={'white'}
           fontSize="50"
         >
-          {/* if target="_blank" used when somebody clicks new tab opened everytime*/}
-            {/* target blank so that when somebody clicks new tab opened and if again clickthen 
-            link opened in same new tab*/}
 
           <a href="https://youtube.com/" target={'blank'}>
             <TiSocialYoutubeCircular />

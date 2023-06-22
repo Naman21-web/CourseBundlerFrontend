@@ -10,6 +10,7 @@ const ChangePassword = () => {
   const [newPassword, setNewPassword] = useState('');
 
   const dispatch = useDispatch();
+
   const submitHandler = e => {
     e.preventDefault();
     dispatch(changePassword(oldPassword, newPassword));

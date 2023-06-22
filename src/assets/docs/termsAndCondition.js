@@ -1,3 +1,4 @@
+// Generated from termly
 const data = `
 1. AGREEMENT TO TERMS
 

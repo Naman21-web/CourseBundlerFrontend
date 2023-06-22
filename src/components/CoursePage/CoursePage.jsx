@@ -4,9 +4,35 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate, useParams } from 'react-router-dom';
 import { getCourseLectures } from '../../redux/actions/course';
 import Loader from '../Layout/Loader/Loader';
+// import introVideo from '../../assets/videos/intro.mp4'
 
 const CoursePage = ({ user }) => {
   const [lectureNumber, setLectureNumber] = useState(0);
+
+  // const lectures = [
+  //   {
+  //   _id:"hjfuj",
+  //   title:"sample",
+  //   description:"sample hffkf vfkvrfhk fhvrf",
+  //   video:{
+  //       url:'dsfag',
+  //   },
+  //   },{
+  //       _id:"hjfuj2",
+  //       title:"sample2",
+  //       description:"sample hffkf vfkvrfhk fhvrf",
+  //       video:{
+  //           url:'dsfag',
+  //       },
+  //   },{
+  //       _id:"hjfuj3",
+  //       title:"sample3",
+  //       description:"sample hffkf vfkvrfhk fhvrf",
+  //       video:{
+  //           url:'dsfag',
+  //       },
+  //   },
+  //   ]
 
   const { lectures, loading } = useSelector(state => state.course);
 
@@ -29,7 +55,7 @@ const CoursePage = ({ user }) => {
   ) : (
     <Grid minH={'90vh'} templateColumns={['1fr', '3fr 1fr']}>
       {lectures && lectures.length > 0 ? (
-        <>
+        <> 
           <Box>
             <video
               width={'100%'}
@@ -38,17 +64,17 @@ const CoursePage = ({ user }) => {
               disablePictureInPicture
               disableRemotePlayback
               src={lectures[lectureNumber].video.url}
+                // src={introVideo}
             ></video>
 
             <Heading
               m="4"
-              children={`#${lectureNumber + 1} ${
-                lectures[lectureNumber].title
-              }`}
+              children={`#${lectureNumber + 1} ${lectures[lectureNumber].title}`}
+
             />
 
             <Heading m="4" children="Description" />
-            <Text m="4" children={lectures[lectureNumber].description} />
+            <Text m="4" children={lectures[lectureNumber].description}/>
           </Box>
 
           <VStack>
@@ -71,9 +97,9 @@ const CoursePage = ({ user }) => {
             ))}
           </VStack>
         </>
-      ) : (
-        <Heading children="No Lectures" />
-      )}
+      ) : ( 
+          <Heading children="No Lectures" /> 
+      )} 
     </Grid>
   );
 };
